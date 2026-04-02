@@ -40,18 +40,26 @@ This project demonstrates the integration of front-end and back-end technologies
 
 ## 📁 Project Structure
 event_management_website/
-│── app.py
-│── templates/
-│ ├── base.html
-│ ├── index.html
-│ ├── events.html
-│ ├── register.html
-│ └── admin.html
-│── static/
-│ ├── css/style.css
-│ └── js/script.js
 
----
+│── app.py
+
+│── templates/
+
+│ ├── base.html
+
+│ ├── index.html
+
+│ ├── events.html
+
+│ ├── register.html
+
+│ └── admin.html
+
+│── static/
+
+│ ├── css/style.css
+
+│ └── js/script.js
 
 
 ---
