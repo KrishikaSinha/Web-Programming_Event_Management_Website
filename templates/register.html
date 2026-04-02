@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Register</h2>
+
+<form method="POST" onsubmit="return validateForm()">
+    
+    <label>Full Name:</label>
+    <input type="text" name="name" placeholder="Full Name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Email"><br><br>
+
+    <!-- FIX HERE -->
+    <label for="event">Select Event:</label>
+    <select name="event" id="event">
+        {% for event in events %}
+        <option value="{{ event.name }}">{{ event.name }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% endblock %}
+</body>
+</html>

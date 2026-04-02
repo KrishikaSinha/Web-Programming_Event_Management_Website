@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% extends "base.html" %}
+
+{% block content %}
+<h2>Admin Panel</h2>
+
+<form method="POST" action="/admin/add">
+    <input type="text" name="name" placeholder="Event Name">
+    <input type="text" name="date" placeholder="Date">
+    <input type="text" name="venue" placeholder="Venue">
+    <button type="submit">Add Event</button> 
+</form>
+
+<hr>
+
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Venue</th>
+    <th>Action</th>
+</tr>
+
+{% for event in events %}
+<tr>
+    <td>{{ event.name }}</td>
+    <td>{{ event.date }}</td>
+    <td>{{ event.venue }}</td>
+    <td>
+        <a href="/admin/delete/{{ event.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+
+</body>
+</html>

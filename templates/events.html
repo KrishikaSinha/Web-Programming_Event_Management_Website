@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% extends "base.html" %}
+
+{% block content %}
+<h2>Events</h2>
+
+<div class="cards">
+    {% for event in events %}
+    <div class="card">
+        <h3>{{ event.name }}</h3>
+        <p>{{ event.date }}</p>
+        <p>{{ event.venue }}</p>
+        <a href="/register">Register</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+</body>
+</html>
